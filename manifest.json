@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "Приложение 'Менеджер паролей'",
+    "short_name": "Менеджер паролей",
+    "description": "Менеджер паролей с возможностью сгенерировать пароль.",
+    "start_url": "/",
+    "background_color": "#da1e24",
+    "theme_color": "#da1e24",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "512x512"
+        }
+    ]
+}

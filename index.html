@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Менеджер паролей</title>
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; }
+    .container { max-width: 600px; width: 100%; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 0px; }
+    h2 { text-align: center; }
+    label { font-weight: bold; margin-top: 10px; }
+    input  { width: 96.8%; padding: 8px; margin-top: 5px; border-radius: 10px; border: 1px solid #ddd; }
+	  button { width: 100%; padding: 8px; margin-top: 5px; border-radius: 10px; border: 1px solid #ddd; }
+    button { background-color: #1f30c9; color: white; cursor: pointer; }
+    button:hover { background-color: #1f30c9; }
+    .password-list { margin-top: 20px; }
+    .password-item { display: flex; flex-direction: column; margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    .password-item .actions { display: flex; justify-content: space-between; margin-top: 5px; }
+    .password-item span { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Менеджер паролей</h2>
+    <input type="text" id="service" placeholder="Название сервиса">
+    <input type="text" id="login" placeholder="Ваш логин">
+    <input type="password" id="password" placeholder="Ваш пароль">
+    
+    <button onclick="addPassword()">Добавить</button>
+
+    <div class="password-list" id="passwordList"></div>
+  </div>
+	<div class="container">
+		<input type="text" id="lengthpassword" placeholder="Длина пароля">
+		<input type="text" id="symbolls" placeholder="Символы">
+		<input type="text" id="pass" placeholder="Сгенерированный пароль" readonly>
+		<button onclick="generatePassword()">Генерация</button>
+	</div>
+  <script src="script.js"></script>
+  <script>
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js', { scope: '/' });
+	}
+</script>
+</body>
+</html>
